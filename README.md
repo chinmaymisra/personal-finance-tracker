@@ -82,6 +82,24 @@ Frontend will run on: **http://localhost:5173**
 
 ---
 
+
+##  Testing
+
+- API upload tests have been implemented using `pytest`, `httpx`, and `pytest-asyncio`.
+- Due to the lack of publicly available Axis Bank PDF samples, only error handling has been automatically tested.
+- The tests currently cover:
+  - Upload of non-Axis PDFs (expected 400 Bad Request).
+  - Upload of corrupted/broken PDFs (expected 400 Bad Request).
+- Parsing of valid Axis Bank statements is manually verified during development but not unit tested.
+
+### To run tests locally:
+
+```bash
+cd backend
+pytest --cov=app --cov-report=term-missing
+```
+
+
 ##  Important Notes
 
 - Currently supports **only Axis Bank** PDF statements.
@@ -93,11 +111,13 @@ Frontend will run on: **http://localhost:5173**
 
 ---
 
-## 📈 Future Extensions 
+##  Future Extensions 
 
 - Add support for multiple banks (HDFC, ICICI, SBI, etc.)
 - Add authentication/login for user-specific uploads.
 - Expenses prediction using historic data
+
+
 
 
 ---
