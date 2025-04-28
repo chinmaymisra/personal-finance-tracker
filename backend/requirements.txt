@@ -3,4 +3,6 @@ uvicorn
 pdfplumber
 pandas
 python-multipart
+pytest
 pytest-cov
+pytest-asyncio
